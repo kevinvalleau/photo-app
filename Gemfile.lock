@@ -130,6 +130,9 @@ GEM
     ffi (1.17.4-arm64-darwin)
     ffi (1.17.4-x86_64-linux-gnu)
     ffi (1.17.4-x86_64-linux-musl)
+    fontawesome_icons_rails (1.0.3)
+      nokogiri (~> 1.11, >= 1.11.3)
+      railties (>= 7.2, < 9.0)
     fugit (1.13.0)
       et-orbi (~> 1.4)
       raabro (~> 1.4)
@@ -370,9 +373,6 @@ GEM
     turbo-rails (2.0.23)
       actionpack (>= 7.1.0)
       railties (>= 7.1.0)
-    twitter-bootstrap-rails (5.4.0)
-      actionpack (>= 5.0, < 9.0)
-      railties (>= 5.0, < 9.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (3.2.0)
@@ -415,6 +415,7 @@ DEPENDENCIES
   debug
   devise
   devise-bootstrap-views
+  fontawesome_icons_rails
   image_processing (~> 1.2)
   jbuilder
   jsbundling-rails
@@ -431,7 +432,6 @@ DEPENDENCIES
   stimulus-rails
   thruster
   turbo-rails
-  twitter-bootstrap-rails
   tzinfo-data
   web-console
 

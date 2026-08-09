@@ -12,7 +12,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
-        <a class="navbar-brand" href="/">PhotoApp</a>
+        <%= link_to "PhotoApp", root_path, class: "navbar-brand" %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -20,12 +20,27 @@
           <ul class="navbar-nav">
             <li class="nav-item"><%= link_to "Home", "/", :class => "nav-link" %></li>
           </ul>
+          <ul class="nav navbar-right col-md-4">
+          <% if current_user %>
+            <li class="col-md-8 user-name">
+                <%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe,
+                edit_user_registration_path, title: 'Edit Profile' %>
+            </li>
+            <li class="col-md-1"> </li>
+            <li class="col-md-3 logout"><%= button_to('Logout', destroy_user_session_path,
+            class: 'btn btn-xs btn-danger', title: 'Logout', method: :delete) %></li>
+          <% else %>
+            <li class="col-md-4 pull-right">
+            <%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary', title: 'Sign In') %>
+            </li>
+          <% end %>
+          </ul>
         </div>
       </div>
     </nav>
 
     <div class="container mt-4">
-      <%= bootstrap_flash %>
+      <%= render "layouts/messages" %>
       <%= yield %>
 
       <footer class="mt-5 py-3 border-top">
