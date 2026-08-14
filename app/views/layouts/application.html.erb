@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="stripe-publishable-key"
+          content="<%= ENV["STRIPE_TEST_PUBLISHABLE_KEY"] %>">
     <title><%= content_for?(:title) ? yield(:title) : "PhotoApp" %></title>
     <%= csrf_meta_tags %>
 
@@ -52,6 +54,7 @@
       </footer>
     </div>
 
+    <script src="https://js.stripe.com/v3/"></script>
     <%= javascript_include_tag "twitter/bootstrap/bootstrap.bundle.min" %>
   </body>
 </html>

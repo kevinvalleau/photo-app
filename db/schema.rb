@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_08_015727) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_13_184422) do
+  create_table "payments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "email"
+    t.string "token"
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "confirmation_sent_at"
     t.string "confirmation_token"

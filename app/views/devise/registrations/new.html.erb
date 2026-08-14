@@ -1,6 +1,8 @@
+<%= javascript_include_tag "credit_card_form", "data-turbo-track": "reload", defer: true %>
+
 <h1><%= t('.sign_up') %></h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: "form", class: 'cc_form' }) do |f| %>
   <%= bootstrap_devise_error_messages! %>
 
   <div class="form-group">
@@ -20,6 +22,12 @@
   <div class="form-group">
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <label>Card details</label>
+    <div id="card-element" class="form-control"></div>
+    <div id="card-errors" class="text-danger mt-2" role="alert"></div>
   </div>
 
   <div class="form-group">

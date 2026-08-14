@@ -7,6 +7,7 @@ gem "devise"
 # Gemfile
 
 gem 'devise-bootstrap-views'
+gem 'stripe'
 
 gem 'fontawesome_icons_rails'
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
