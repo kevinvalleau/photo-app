@@ -8,6 +8,9 @@ gem "devise"
 
 gem 'devise-bootstrap-views'
 gem 'stripe'
+gem "carrierwave", "~> 3.1"
+gem 'mini_magick'
+gem 'fog-aws'
 
 gem 'fontawesome_icons_rails'
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]

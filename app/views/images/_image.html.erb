@@ -1,0 +1,12 @@
+<div id="<%= dom_id image %>">
+  <div>
+    <strong>Name:</strong>
+    <%= image.name %>
+  </div>
+
+  <div>
+    <strong>Picture:</strong>
+    <%= image_tag(image.picture.url, size: "300x300") if image && image.picture? %>
+  </div>
+
+</div>
